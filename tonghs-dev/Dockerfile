@@ -34,18 +34,16 @@ WORKDIR /home/tonghs/git
 RUN git clone https://github.com/tonghuashuai/myfile.git && chown -R tonghs myfile
 
 WORKDIR /home/tonghs/git/myfile
-RUN sudo -u tonghs cp vim /home/tonghs/.vim -rf && sudo -u tonghs cp vimrc /home/tonghs/.vimrc && sudo -u tonghs cp bash /home/tonghs/.bash_aliases
+RUN sudo -u tonghs cp vim /home/tonghs/.vim -rf && sudo -u tonghs cp vimrc /home/tonghs/.vimrc && sudo -u tonghs cp bash /home/tonghs/.bash_tonghs
 
 WORKDIR /home/tonghs
-RUN sudo -u tonghs echo 'if [ -f ~/.bash_aliases ]; then' >> /home/tonghs/.bashrc
-RUN sudo -u tonghs echo '  . ~/.bash_aliases' >> /home/tonghs/.bashrc
+RUN sudo -u tonghs echo 'if [ -f ~/.bash_tonghs]; then' >> /home/tonghs/.bashrc
+RUN sudo -u tonghs echo '  . ~/.bash_tonghs' >> /home/tonghs/.bashrc
 RUN sudo -u tonghs echo 'fi' >> /home/tonghs/.bashrc
-RUN sudo -u tonghs echo "PS1='\[\e[1;32m\]\u@\h \[\e[1;34m\]\w$ \[\e[m\]'" >> /home/tonghs/.bashrc
 
-RUN sudo -u tonghs echo 'if [ -f ~/.bash_aliases ]; then' >> /home/tonghs/.bash_profile
-RUN sudo -u tonghs echo '  . ~/.bash_aliases' >> /home/tonghs/.bash_profile
+RUN sudo -u tonghs echo 'if [ -f ~/.bash_tonghs]; then' >> /home/tonghs/.bash_profile
+RUN sudo -u tonghs echo '  . ~/.bash_tonghs' >> /home/tonghs/.bash_profile
 RUN sudo -u tonghs echo 'fi' >> /home/tonghs/.bash_profile
-RUN sudo -u tonghs echo "PS1='\[\e[1;32m\]\u@\h \[\e[1;34m\]\w$ \[\e[m\]'" >> /home/tonghs/.bash_profile
 
 RUN sudo -u tonghs git clone https://github.com/gmarik/Vundle.vim.git /home/tonghs/.vim/bundle/Vundle.vim
 
