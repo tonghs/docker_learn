@@ -17,6 +17,7 @@ RUN updatedb
 RUN mkdir /home/tonghs
 RUN useradd -s /bin/bash -G root -d /home/tonghs tonghs
 RUN chown -R tonghs /home/tonghs
+RUN echo 'tonghs:tonghs' | chpasswd
 # 添加 sudo
 RUN echo 'tonghs ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
@@ -26,6 +27,7 @@ RUN mkdir -p /var/run/sshd
 # 配置公钥
 RUN sudo -u tonghs mkdir -p /home/tonghs/.ssh
 ADD authorized_keys /home/tonghs/.ssh/authorized_keys
+RUN chown tonghs:tonghs /home/tonghs/.ssh/authorized_keys
 
 # 配置文件
 RUN sudo -u tonghs mkdir -p /home/tonghs/git 
@@ -41,7 +43,7 @@ RUN sudo -u tonghs echo 'if [ -f ~/.bash_tonghs]; then' >> /home/tonghs/.bashrc
 RUN sudo -u tonghs echo '  . ~/.bash_tonghs' >> /home/tonghs/.bashrc
 RUN sudo -u tonghs echo 'fi' >> /home/tonghs/.bashrc
 
-RUN sudo -u tonghs echo 'if [ -f ~/.bash_tonghs]; then' >> /home/tonghs/.bash_profile
+RUN sudo -u tonghs echo 'if [ -f ~/.bash_tonghs ]; then' >> /home/tonghs/.bash_profile
 RUN sudo -u tonghs echo '  . ~/.bash_tonghs' >> /home/tonghs/.bash_profile
 RUN sudo -u tonghs echo 'fi' >> /home/tonghs/.bash_profile
 
