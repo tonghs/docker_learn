@@ -1,10 +1,10 @@
-FROM debian
+FROM ubuntu:14.04
 
 MAINTAINER tonghs <tonghuashuai@gmail.com>
 
 # 修改源
 RUN mv /etc/apt/sources.list /etc/apt/sources.list.bak
-COPY ./bjt.list /etc/apt/sources.list
+COPY ./ali.list /etc/apt/sources.list
 
 # 更新源 && 安装必要软件
 RUN apt-get update && apt-get install -y python mlocate wget vim tmux silversearcher-ag git mercurial  nginx  redis-server openssh-server python-pip sudo
@@ -51,6 +51,6 @@ ADD run.sh /run.sh
 RUN chmod 755 /run.sh
 
 # 开放端口
-EXPOSE 22 8080 80
+EXPOSE 22 8080 80 27017 3363 8888 9999 9000
 
 CMD ["/run.sh"]
