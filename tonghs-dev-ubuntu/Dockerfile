@@ -4,7 +4,7 @@ MAINTAINER tonghs <tonghuashuai@gmail.com>
 
 # 修改源
 RUN mv /etc/apt/sources.list /etc/apt/sources.list.bak
-COPY ./ali.list /etc/apt/sources.list
+COPY ./sources.list /etc/apt/sources.list
 
 # 更新源 && 安装必要软件
 RUN apt-get update && apt-get install -y python mlocate wget vim tmux silversearcher-ag git mercurial  nginx  redis-server openssh-server python-pip sudo
