@@ -1,3 +1,4 @@
+# ANGELCRUNCH apt source
 deb http://mirror.pe.vc/ubuntu/ trusty main restricted universe multiverse
 deb http://mirror.pe.vc/ubuntu/ trusty-security main restricted universe multiverse
 deb http://mirror.pe.vc/ubuntu/ trusty-updates main restricted universe multiverse
@@ -9,3 +10,14 @@ deb-src http://mirror.pe.vc/ubuntu/ trusty-updates main restricted universe mult
 deb-src http://mirror.pe.vc/ubuntu/ trusty-proposed main restricted universe multiverse
 deb-src http://mirror.pe.vc/ubuntu/ trusty-backports main restricted universe multiverse
 
+# aliyun apt source
+# deb http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse
+# deb http://mirrors.aliyun.com/ubuntu/ trusty-security main restricted universe multiverse
+# deb http://mirrors.aliyun.com/ubuntu/ trusty-updates main restricted universe multiverse
+# deb http://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse
+# deb http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse
+# deb-src http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse
+# deb-src http://mirrors.aliyun.com/ubuntu/ trusty-security main restricted universe multiverse
+# deb-src http://mirrors.aliyun.com/ubuntu/ trusty-updates main restricted universe multiverse
+# deb-src http://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse
+# deb-src http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse
